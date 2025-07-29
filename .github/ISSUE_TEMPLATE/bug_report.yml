@@ -1,0 +1,145 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug! 🙏
+
+        Please fill out the information below to help us understand and reproduce the issue.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 🐛 Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe the bug in detail...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 🔄 Steps to Reproduce
+      description: Detailed steps to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Enter '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: ✅ Expected Behavior
+      description: A clear description of what you expected to happen
+      placeholder: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: ❌ Actual Behavior
+      description: A clear description of what actually happened
+      placeholder: What actually happened instead?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: environment-type
+    attributes:
+      label: 🌍 Environment Type
+      description: Where are you running the application?
+      options:
+        - Local Development (npm start)
+        - D365 Web Resource (npm run build)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-frequency
+    attributes:
+      label: 🔄 Issue Frequency
+      description: How often does this issue occur?
+      options:
+        - Always (100%)
+        - Often (75%)
+        - Sometimes (50%)
+        - Rarely (25%)
+        - Once
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: affected-areas
+    attributes:
+      label: 🎯 Affected Areas
+      description: Which parts of the application are affected? (Check all that apply)
+      options:
+        - label: Authentication/OAuth
+        - label: Dataverse Connection
+        - label: CRUD Operations (Create, Read, Update, Delete)
+        - label: Navigation System
+        - label: UI Components
+        - label: Build Process
+        - label: Token Management
+
+  - type: textarea
+    id: console-errors
+    attributes:
+      label: 🚨 Console Errors/Logs
+      description: Any error messages from the browser console or terminal
+      placeholder: |
+        Paste any relevant error messages, stack traces, or console output here.
+
+        ```
+        Error: Failed to fetch accounts
+            at useAccounts.ts:45:12
+            at async fetchAccounts (useAccounts.ts:23:5)
+        ```
+      render: shell
+
+  - type: textarea
+    id: network-errors
+    attributes:
+      label: 🌐 Network Errors
+      description: Any network-related errors (check browser DevTools → Network tab)
+      placeholder: |
+        Include any failed HTTP requests, status codes, or API errors:
+
+        ```
+        POST https://your-org.crm4.dynamics.com/api/data/v9.2/accounts
+        Status: 401 Unauthorized
+        Response: {"error": {"code": "0x80040217", "message": "Access denied"}}
+        ```
+      render: shell
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📝 Additional Context
+      description: |
+        Add any other context about the problem here:
+        - Configuration details
+        - Recent changes made
+        - Workarounds you've tried
+        - Related issues or discussions
+      placeholder: |
+        Any additional information that might help:
+        - Custom configurations in .env file
+        - Recent changes to the codebase
+        - Similar issues experienced
+        - Attempted solutions
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **Thank you for your bug report!** 🚀

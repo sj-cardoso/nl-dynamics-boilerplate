@@ -1,0 +1,113 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature]: "
+labels: ["enhancement", "needs-review"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Got an idea to make the boilerplate better?
+        We'd love to hear your suggestions! Please provide some details below.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: ✨ Feature Description
+      description: What feature would you like to see added?
+      placeholder: Describe the feature you'd like to request...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-solving
+    attributes:
+      label: 🎯 Problem or Use Case
+      description: What problem does this feature solve? How would you use it?
+      placeholder: |
+        Example: "As a developer, I want to easily manage multiple D365 environments so that I can switch between dev/test/prod without changing configuration files."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: 💭 Proposed Solution
+      description: How do you envision this feature working?
+      placeholder: |
+        Describe your ideal solution:
+        - What would the user interface look like?
+        - How would developers interact with it?
+        - Any specific implementation ideas?
+
+  - type: dropdown
+    id: feature-area
+    attributes:
+      label: 🛠️ Feature Area
+      description: Which part of the boilerplate would this feature affect?
+      options:
+        - Authentication & OAuth
+        - Dataverse Integration
+        - UI Components & Design
+        - Developer Experience
+        - Documentation
+        - Build & Deployment
+        - Performance
+        - Testing
+        - Other (specify below)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📈 Priority Level
+      description: How important is this feature to you?
+      options:
+        - Nice to have
+        - Would be helpful
+        - Important for my project
+        - Critical/Blocking
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔄 Alternatives Considered
+      description: Have you considered any alternative solutions or workarounds?
+      placeholder: |
+        - What alternatives have you tried?
+        - Are there existing tools/libraries that do something similar?
+        - Any workarounds you're currently using?
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📝 Additional Context
+      description: Anything else you'd like to add?
+      placeholder: |
+        - Links to similar features in other projects
+        - Screenshots or mockups
+        - Any implementation concerns
+        - Impact on existing functionality
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: 🤝 Contribution
+      description: Are you interested in helping implement this feature?
+      options:
+        - label: I'd be willing to submit a Pull Request for this feature
+        - label: I can help with testing once implemented
+        - label: I can provide additional feedback during development
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        **Thanks for your suggestion!** 🚀
+
+        We'll review your feature request and get back to you. Popular requests and well-defined features are more likely to be implemented quickly.
+
