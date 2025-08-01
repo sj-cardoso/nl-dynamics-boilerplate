@@ -254,7 +254,6 @@ We welcome contributions! Here's how to get started:
 ### 🐛 **Issues & Support**
 
 - 🚨 [Report Issues](https://github.com/novalogica/nl-dynamics-boilerplate/issues)
-- 💬 [Discussions](https://github.com/novalogica/nl-dynamics-boilerplate/discussions)
 - 📧 Email: support@novalogica.pt
 
 ### 🔗 **Useful Links**
