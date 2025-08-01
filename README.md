@@ -122,17 +122,23 @@ npm start
 
 ```
 src/
-├── 📁 components/ui/        # shadcn/ui components
-├── 📁 pages/               # Application pages
-│   ├── home.tsx           # Landing page
-│   ├── documentation.tsx  # Built-in docs
-│   └── demo.tsx          # CRUD demo
-├── 📁 providers/          # React context providers
-├── 📁 hooks/              # Custom React hooks
-│   ├── useDataverse.ts   # Dataverse connection
-│   └── useAccounts.ts    # Account CRUD operations
-├── 📁 contexts/           # React contexts
-└── 📁 lib/               # Utility functions
+├── 📁 components/ui/           # shadcn/ui components
+├── 📁 pages/                   # Application pages
+│   ├── 📁 config/
+│   │   ├── page-renderer.tsx   # Render for current page
+│   │   └── pages-config.ts     # Pages config
+│   ├── home.tsx                # Landing page
+│   ├── documentation.tsx       # Built-in docs
+│   └── demo.tsx                # CRUD demo
+├── 📁 providers/               # React context providers
+│   ├── dataverse-provider.tsx  # Dataverse Provider
+│   └── navigation-provider.tsx # Navigation Provider
+├── 📁 hooks/                   # Custom React hooks
+│   ├── useNavigation.ts        # Navigation handler
+│   ├── useDataverse.ts         # Dataverse connection
+│   └── useAccounts.ts          # Account CRUD operations
+├── 📁 contexts/                # React contexts
+└── 📁 lib/                     # Utility functions
 ```
 
 ---
@@ -173,27 +179,6 @@ const AccountsComponent = () => {
 };
 ```
 
-### 🎣 Creating Custom Entity Hooks
-
-```typescript
-// hooks/useContacts.ts
-export const useContacts = () => {
-  const { api, isReady } = useDataverse();
-  const [contacts, setContacts] = useState<Contact[]>([]);
-
-  const fetchContacts = useCallback(async () => {
-    const response = await api.retrieveMultiple({
-      collection: "contacts",
-      select: ["contactid", "fullname", "emailaddress1"],
-      filter: "statecode eq 0",
-    });
-    setContacts(response?.value || []);
-  }, [api, isReady]);
-
-  return { contacts, fetchContacts };
-};
-```
-
 ### 🎨 Adding New Pages
 
 ```typescript
@@ -224,10 +209,15 @@ navigateTo("contacts");
 # Build for production
 npm run build
 
-# Upload files to D365:
+# Build Outputs:
 # 📄 build/index.html → HTML Web Resource
 # 📜 build/static/js/bundle.js → JavaScript Web Resource
 # 🎨 build/static/css/bundle.css → CSS Web Resource
+
+# Upload files to D365:
+# 📄 publisher_/[App Name]/index.html → HTML Web Resource
+# 📜 publisher_/[App Name]/static/js/bundle.js → JavaScript Web Resource
+# 🎨 publisher_/[App Name]/static/css/bundle.css → CSS Web Resource
 ```
 
 ---
@@ -239,20 +229,6 @@ npm run build
 | `npm start`        | 🚀 Start development server with OAuth |
 | `npm run build`    | 📦 Build optimized production bundle   |
 | `node getToken.js` | 🔑 Manual token refresh                |
-
----
-
-## 🎨 Built With
-
-This boilerplate leverages the best modern web technologies:
-
-| Technology                                                           | Purpose       | Version |
-| -------------------------------------------------------------------- | ------------- | ------- |
-| [React](https://reactjs.org/)                                        | UI Framework  | 19.1.0  |
-| [TypeScript](https://www.typescriptlang.org/)                        | Type Safety   | 4.9.5   |
-| [Tailwind CSS](https://tailwindcss.com/)                             | Styling       | 4.1.11  |
-| [shadcn/ui](https://ui.shadcn.com/)                                  | Components    | Latest  |
-| [dynamics-web-api](https://github.com/AleksandrRogov/DynamicsWebApi) | Dataverse API | 2.3.1   |
 
 ---
 
@@ -272,7 +248,6 @@ We welcome contributions! Here's how to get started:
 
 ### 📚 **Documentation**
 
-- 📖 [Built-in Documentation](http://localhost:3000) - Available in the app
 - 🔗 [DynamicsWebApi Docs](https://github.com/AleksandrRogov/DynamicsWebApi)
 - 🎨 [shadcn/ui Components](https://ui.shadcn.com/docs/components)
 
@@ -301,7 +276,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **[⭐ Star this repository](https://github.com/novalogica/nl-dynamics-boilerplate)** if you find it useful!
 
 Made with ❤️ by [novalogica](https://github.com/novalogica)
-
-_Empowering developers to build amazing Dynamics 365 applications_
 
 </div>
