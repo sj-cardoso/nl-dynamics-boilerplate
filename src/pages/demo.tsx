@@ -316,9 +316,17 @@ export const DemoPage = () => {
               <AlertCircle className="h-4 w-4" />
               <AlertTitle>Account Found: {retrievedAccount.name}</AlertTitle>
               <AlertDescription>
-                <strong>Email:</strong> {retrievedAccount.emailaddress1 || "N/A"},{" "}
-                <strong>Phone:</strong> {retrievedAccount.telephone1 || "N/A"},{" "}
-                <strong>City:</strong> {retrievedAccount.address1_city || "N/A"}
+                <ul>
+                  <li>
+                    <strong>Email:</strong> {retrievedAccount.emailaddress1 || "N/A"},{" "}
+                  </li>
+                  <li>
+                    <strong>Phone:</strong> {retrievedAccount.telephone1 || "N/A"},{" "}
+                  </li>
+                  <li>
+                    <strong>City:</strong> {retrievedAccount.address1_city || "N/A"}
+                  </li>
+                </ul>
               </AlertDescription>
             </Alert>
           )}
