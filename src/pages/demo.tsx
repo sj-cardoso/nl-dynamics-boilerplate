@@ -47,7 +47,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 
-export const DemoPage: React.FC = () => {
+export const DemoPage = () => {
   const { navigateTo } = useNavigation();
   const { isReady, error: connectionError } = useDataverse();
   const {

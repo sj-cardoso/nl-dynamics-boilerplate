@@ -4,7 +4,7 @@ import { Book, Database, Rocket } from "lucide-react";
 import { useNavigation } from "@/hooks/useNavigation";
 import { Badge } from "@/components/ui/badge";
 
-export const HomePage: React.FC = () => {
+export const HomePage= () => {
   const { navigateTo } = useNavigation();
 
   return (

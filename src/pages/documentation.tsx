@@ -75,7 +75,7 @@ const StepCard = ({ number, title, children }: StepCardProps) => (
   </Card>
 );
 
-export const DocumentationPage: React.FC = () => {
+export const DocumentationPage= () => {
   const [copiedCode, setCopiedCode] = useState("");
   const { navigateTo } = useNavigation();
 
@@ -157,7 +157,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Users } from "lucide-react";
 import { useNavigation } from "@/hooks/useNavigation";
 
-export const ContactsPage: React.FC = () => {
+export const ContactsPage= () => {
   const { navigateTo } = useNavigation();
 
   return (
