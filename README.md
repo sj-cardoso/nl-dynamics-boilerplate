@@ -5,6 +5,7 @@
 [![React](https://img.shields.io/badge/React-19.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.11-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Shadcn](https://img.shields.io/badge/Shadcn-4.1.11-white?style=for-the-badge&logo=shadcnui&logoColor=white)](https://ui.shadcn.com/)
 
 **Production-ready React boilerplate for Microsoft Dynamics 365 development**
 
